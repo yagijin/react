@@ -75,7 +75,7 @@ export default function TabMenus() {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <Link to="/">
+        <Link to="/profile">
           <StyledMenuItem>
             <ListItemIcon>
               <AccountCircle />
