@@ -40,7 +40,7 @@ function Copyright() {
       <Typography variant="body2" color="textSecondary" align="center">
         {'Copyright © Jin Yagi '}
         {new Date().getFullYear()}
-        {'. - All Rights Reserved -'}
+        {' - All Rights Reserved. '}
       </Typography>
     );
 }

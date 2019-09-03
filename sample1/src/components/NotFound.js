@@ -49,7 +49,7 @@ function NotFound() {
                 <div className={classes.heroContent}>
                     <Container maxWidth="lg">
                     <Typography component="h1" variant="h3" align="center" color="textPrimary" gutterBottom>
-                        Page Not Found.
+                        Page Not Found
                     </Typography>
                     <Typography variant="h5" align="center" color="textSecondary" paragraph>
                         You can use the tab at the upper left to go to any page you want.

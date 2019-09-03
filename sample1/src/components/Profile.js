@@ -13,6 +13,9 @@ import MainFooter from './MainFooter.js';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { makeStyles } from '@material-ui/core/styles';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithubSquare, faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
+
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const useStyles = makeStyles(theme => ({
@@ -58,23 +61,23 @@ export default function Profile() {
       <main>
           {/* Hero unit */}
           <div className={classes.heroContent}>
-            <Container maxWidth="sm">
-              <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+            <Container maxWidth="md">
+              <Typography component="h1" variant="h2" align="left" color="textPrimary" gutterBottom>
                 やぎじん
               </Typography>
-              <Typography variant="h5" align="center" color="textSecondary" paragraph>
+              <Typography variant="h5" align="left" color="textSecondary" paragraph>
                 登呂遺跡非公式観光親善大使
               </Typography>
               <div className={classes.heroButtons}>
                 <Grid container spacing={2} justify="center">
                   <Grid item>
-                    <Button variant="contained" color="primary" href="https://github.com/yagijin" target="_blank">
-                      GitHub
+                    <Button variant="contained" color="default" href="https://github.com/yagijin" target="_blank">
+                      <FontAwesomeIcon icon={faGithubSquare}  size="lg"/>　GitHub
                     </Button>
                   </Grid>
                   <Grid item>
-                    <Button variant="outlined" color="primary" href="https://twitter.com/yagijinjin" target="_blank">
-                      Twitter
+                    <Button variant="contained" color="primary" href="https://twitter.com/yagijinjin" target="_blank">
+                      <FontAwesomeIcon icon={faTwitterSquare}  size="lg"/>　Twitter
                     </Button>
                   </Grid>
                 </Grid>
