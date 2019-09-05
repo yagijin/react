@@ -10,7 +10,6 @@ import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import StepContent from '@material-ui/core/StepContent';
 import Button from '@material-ui/core/Button';
-import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles(theme => ({
@@ -36,6 +35,21 @@ const useStyles = makeStyles(theme => ({
     return ['研究テーマ：ブレインコンピュータインターフェース', '目的', '内容'];
   }
   
+  function GetImages(props) {
+    switch (props.step) {
+      case 0:
+        return <Container maxWidth="md">
+              <img src="./static/materials/brain.png"  alt="アイコン" />
+              </Container>
+      case 1:
+        return <Typography>222</Typography>
+      case 2:
+        return <Typography>333</Typography>
+      default:
+        return <Typography>Unknown Image</Typography>
+    }
+  }
+
   function getStepContent(step) {
     switch (step) {
       case 0:
@@ -70,10 +84,6 @@ function Research() {
         setActiveStep(prevActiveStep => prevActiveStep - 1);
     }
 
-    function handleReset() {
-        setActiveStep(0);
-    }
-
     return (
         <React.Fragment>
         <CssBaseline />
@@ -91,6 +101,7 @@ function Research() {
                     <StepLabel>{label}</StepLabel>
                     <StepContent>
                     <Typography>{getStepContent(index)}</Typography>
+                    <GetImages step={index}/>
                     <div className={classes.actionsContainer}>
                         <div>
                         <Button
@@ -101,12 +112,13 @@ function Research() {
                             Back
                         </Button>
                         <Button
+                            disabled={activeStep === 2}
                             variant="contained"
                             color="primary"
                             onClick={handleNext}
                             className={classes.button}
                         >
-                            {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                            Next
                         </Button>
                         </div>
                     </div>

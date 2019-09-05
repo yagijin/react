@@ -15,6 +15,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithubSquare, faTwitterSquare, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faHatWizard,faChessKnight,faSuitcase, faFish } from '@fortawesome/free-solid-svg-icons';
 
 import Avatar from '@material-ui/core/Avatar';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
@@ -24,8 +25,6 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import EmailIcon from '@material-ui/icons/Email';
 import Fab from '@material-ui/core/Fab';
-
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const useStyles = makeStyles(theme => ({
   icon: {
@@ -231,10 +230,12 @@ export default function Profile() {
                     />
                     <CardContent className={classes.cardContent}>
                       <Typography gutterBottom variant="h5" component="h2">
-                        Magic
+                      <FontAwesomeIcon icon={faHatWizard}  size="md" className={classes.leftIcon}/>
+                      Magic
                       </Typography>
                       <Typography>
-                        主にスライハンドを練習. 現在は，ギミック作りに没頭中
+                        主にスライハンドを練習. <br />
+                        現在は，ギミック作りに没頭中.
                       </Typography>
                     </CardContent>
                     <CardActions>
@@ -256,6 +257,7 @@ export default function Profile() {
                     />
                     <CardContent className={classes.cardContent}>
                       <Typography gutterBottom variant="h5" component="h2">
+                      <FontAwesomeIcon icon={faChessKnight}  size="md" className={classes.leftIcon}/>
                         Boardgame
                       </Typography>
                       <Typography>
@@ -277,6 +279,7 @@ export default function Profile() {
                     />
                     <CardContent className={classes.cardContent}>
                       <Typography gutterBottom variant="h5" component="h2">
+                      <FontAwesomeIcon icon={faSuitcase}  size="md" className={classes.leftIcon}/>
                         Travel
                       </Typography>
                       <Typography>
@@ -297,6 +300,7 @@ export default function Profile() {
                     />
                     <CardContent className={classes.cardContent}>
                       <Typography gutterBottom variant="h5" component="h2">
+                      <FontAwesomeIcon icon={faFish}  size="md" className={classes.leftIcon}/>
                         Ramen
                       </Typography>
                       <Typography>
@@ -311,19 +315,6 @@ export default function Profile() {
 
             </Grid>
           </Container>
-
-          <Grid container spacing={2} justify="center">
-            <Grid item>
-              <Button variant="contained" color="default" href="https://github.com/yagijin" target="_blank" className={classes.heroButtons} >
-                <FontAwesomeIcon icon={faGithubSquare}  size="lg"/>　GitHub
-              </Button>
-            </Grid>
-            <Grid item>
-              <Button variant="contained" color="primary" href="https://twitter.com/yagijinjin" target="_blank" className={classes.heroButtons} >
-                <FontAwesomeIcon icon={faTwitterSquare}  size="lg"/>　Twitter
-              </Button>
-            </Grid>
-          </Grid>
         </main>
         <MainFooter />
         </React.Fragment>

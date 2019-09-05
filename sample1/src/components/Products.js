@@ -14,8 +14,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Grid from '@material-ui/core/Grid';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithubSquare, faTwitterSquare, faInstagram } from '@fortawesome/free-brands-svg-icons';
-
+import { faGithubSquare, faReact, faYahoo } from '@fortawesome/free-brands-svg-icons';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
 import Fab from '@material-ui/core/Fab';
 
 const useStyles = makeStyles(theme => ({
@@ -80,7 +80,7 @@ function Products() {
                                 GitHub
                             </Typography>
                             <Typography>
-                                GitHubアカウント．制作したものがいくつかあります．
+                                GitHubアカウント．主にここに制作物をあげています．
                             </Typography>
                             </CardContent>
                             <CardActions>
@@ -102,17 +102,23 @@ function Products() {
                             />
                             <CardContent className={classes.cardContent}>
                             <Typography gutterBottom variant="h5" component="h2">
-                                Twitter
+                                Hack U 2019 参加作品
                             </Typography>
                             <Typography>
-                                Twitterアカウント．たまにしかつぶやきません．
+                                HappyHacking賞受賞.<br/>
+                                任意の相手がWifiにつないだ時に検知して通知してくれるサービス.
                             </Typography>
                             </CardContent>
                             <CardActions>
                             
-                            <Fab variant="extended" size="medium" color="primary" aria-label="add" className={classes.rightIcon} href="https://twitter.com/yagijinjin" target="_blank">
-                            <FontAwesomeIcon icon={faTwitterSquare}  size="lg" className={classes.leftIcon}/>
-                            Twitter
+                            <Fab variant="extended" size="medium" color="default" aria-label="add" className={classes.rightIcon} href="https://github.com/yagijin/hack_u2019nagoya" target="_blank">
+                            <FontAwesomeIcon icon={faGithubSquare}  size="lg" className={classes.leftIcon}/>
+                                GitHub
+                            </Fab>
+
+                            <Fab variant="extended" size="medium" color="secondary" aria-label="add" className={classes.rightIcon} href="https://hacku.yahoo.co.jp/hacku2019nagoya/" target="_blank">
+                            <FontAwesomeIcon icon={faYahoo}  size="md" className={classes.leftIcon}/>
+                                Yahoo!
                             </Fab>
                             </CardActions>
                         </Card>
@@ -127,82 +133,25 @@ function Products() {
                             />
                             <CardContent className={classes.cardContent}>
                             <Typography gutterBottom variant="h5" component="h2">
-                                Magic
+                                <FontAwesomeIcon icon={faReact}  size="md" className={classes.leftIcon}/>
+                                ポートフォリオサイト
                             </Typography>
                             <Typography>
-                                主にスライハンドを練習. 現在は，ギミック作りに没頭中
+                                このポートフォリオサイト．
                             </Typography>
                             </CardContent>
                             <CardActions>
                         
-                            <Fab variant="extended" size="medium" color="primary" aria-label="add" className={classes.rightIcon} href="https://www.instagram.com/yagijin_magic/" target="_blank">
-                            <FontAwesomeIcon icon={faInstagram}  size="lg" className={classes.leftIcon}/>
-                            Instagram
+                            <Fab variant="extended" size="medium" color="default" aria-label="add" className={classes.rightIcon} href="https://github.com/yagijin/portfolio" target="_blank">
+                            <FontAwesomeIcon icon={faGithubSquare}  size="lg" className={classes.leftIcon}/>
+                                GitHub
+                            </Fab>
+                            <Fab variant="extended" size="medium" color="primary" aria-label="add" className={classes.rightIcon} href="https://portfolio.yagijin.com/" target="_blank">
+                            <FontAwesomeIcon icon={faHome}  size="lg" className={classes.leftIcon}/>
+                                TopPage
                             </Fab>
                             </CardActions>
                         </Card>          
-                        </Grid>
-
-                        <Grid item key={4} xs={12} sm={6} md={4}>
-                        <Card className={classes.card}>
-                            <CardMedia
-                            className={classes.cardMedia}
-                            image="https://source.unsplash.com/random"
-                            title="Image title"
-                            />
-                            <CardContent className={classes.cardContent}>
-                            <Typography gutterBottom variant="h5" component="h2">
-                                Boardgame
-                            </Typography>
-                            <Typography>
-                                なんでもやります．<br />
-                                カタン日本選手権2019地区予選敗退.
-                            </Typography>
-                            </CardContent>
-                            <CardActions>
-                            </CardActions>
-                        </Card>
-                        </Grid>
-
-                        <Grid item key={5} xs={12} sm={6} md={4}>
-                        <Card className={classes.card}>
-                            <CardMedia
-                            className={classes.cardMedia}
-                            image="https://source.unsplash.com/random"
-                            title="Image title"
-                            />
-                            <CardContent className={classes.cardContent}>
-                            <Typography gutterBottom variant="h5" component="h2">
-                                Travel
-                            </Typography>
-                            <Typography>
-                                海外旅行が好きです．アイスランドにいつか行くことが夢.
-                            </Typography>
-                            </CardContent>
-                            <CardActions>
-                            </CardActions>
-                        </Card>
-                        </Grid>
-
-                        <Grid item key={6} xs={12} sm={6} md={4}>
-                        <Card className={classes.card}>
-                            <CardMedia
-                            className={classes.cardMedia}
-                            image="https://source.unsplash.com/random"
-                            title="Image title"
-                            />
-                            <CardContent className={classes.cardContent}>
-                            <Typography gutterBottom variant="h5" component="h2">
-                                Ramen
-                            </Typography>
-                            <Typography>
-                                究極の煮干しラーメンを作るべく日々奮闘中．
-                                いつか寸胴を買ったら豚骨もやりたい．
-                            </Typography>
-                            </CardContent>
-                            <CardActions>
-                            </CardActions>
-                        </Card>
                         </Grid>
                     </Grid>
                 </Container>
