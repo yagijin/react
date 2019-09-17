@@ -39,12 +39,16 @@ const useStyles = makeStyles(theme => ({
     switch (props.step) {
       case 0:
         return <Container maxWidth="md">
-              <img src="./static/materials/brain.png"  alt="アイコン" />
+              <img src="./static/materials/research/ssvep.png"  alt="アイコン" width="100%"/>
               </Container>
       case 1:
-        return <Typography>222</Typography>
+        return <Container maxWidth="md">
+                <img src="./static/materials/research/ssvep.png"  alt="ssvep" width="100%"/>
+                </Container>
       case 2:
-        return <Typography>333</Typography>
+        return <Container maxWidth="md">
+              <img src="./static/materials/research/ssvep.png"  alt="ssvep" width="100%"/>
+              </Container>
       default:
         return <Typography>Unknown Image</Typography>
     }
@@ -54,12 +58,11 @@ const useStyles = makeStyles(theme => ({
     switch (step) {
       case 0:
         return `生体情報を処理する研究室に在籍しています．研究分野は，ブレインコンピュータインターフェース（BCI）です．
-                BCIは，脳波を用いたインターフェースで，これを使用すると脳波のみでキーボードやロボットなどの操作をすることができます． 
-                この技術は，ALSの患者などのしゃべることもできないような重度の運動障害の患者にコニュニケーションを取る手段を提供します． 
-                将来的には，そういった方々に使ってもらいたいと思ったため，安価で携帯型のBCIを作成することを目的に研究をしています．
-                現在取り組んでいる内容としては，BCIとしての精度とコマンド数をあげるために，脳波の解析の方法についての提案や検証をしています．`;
+                BCIは，脳波を用いたインターフェースで，これを使用すると脳波のみでキーボードやロボットなどの操作をすることができます．`;
       case 1:
-        return 'An ad group contains one or more ads which target a shared set of keywords.';
+        return `BCIは，しゃべることもできないような重度の運動障害の患者にコニュニケーションを取る手段を提供します．
+                将来的には，そういった方々に使ってもらいたいと考えているため，安価で携帯型のBCIを作成することを目的に研究をしています．
+                現在取り組んでいる内容としては，BCIとしての精度とコマンド数をあげるために，脳波の解析の方法についての提案や検証をしています．`;
       case 2:
         return `以下の図は，SSVEPという脳波成分を用いて作成されるBCIの概要です． 
                 SSVEPは，一定の周波数で点滅する刺激を注視した際に，刺激の点滅周波数に同調して現れる脳波成分です． 

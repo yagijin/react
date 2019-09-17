@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -105,7 +104,7 @@ export default function Profile() {
             <Container maxWidth="md">
             <Grid container spacing={1}>
               <Grid item xs={3} sm={3} md={2} align="left">
-                <Avatar alt="JinYagi" src="./static/materials/yagi.jpg" className={classes.avatar}/>
+                <Avatar alt="JinYagi" src="./static/materials/profile/yagi.jpg" className={classes.avatar}/>
               </Grid>
               <Grid item xs={9} sm={9} md={10} align="left">
                 <Typography component="h1" variant="h2" align="left" color="textPrimary" gutterBottom>
@@ -175,8 +174,8 @@ export default function Profile() {
                   <Card className={classes.card}>
                     <CardMedia
                       className={classes.cardMedia}
-                      image="https://source.unsplash.com/random"
-                      title="Image title"
+                      image="./static/materials/profile/github.png"
+                      title="GitHub"
                     />
                     <CardContent className={classes.cardContent}>
                       <Typography gutterBottom variant="h5" component="h2">
@@ -200,8 +199,8 @@ export default function Profile() {
                   <Card className={classes.card}>
                     <CardMedia
                       className={classes.cardMedia}
-                      image="https://source.unsplash.com/random"
-                      title="Image title"
+                      image="./static/materials/profile/twitter.jpg"
+                      title="Twitter"
                     />
                     <CardContent className={classes.cardContent}>
                       <Typography gutterBottom variant="h5" component="h2">
@@ -225,8 +224,8 @@ export default function Profile() {
                   <Card className={classes.card}>
                     <CardMedia
                       className={classes.cardMedia}
-                      image="https://source.unsplash.com/random"
-                      title="Image title"
+                      image="./static/materials/profile/magic.jpg"
+                      title="Magic"
                     />
                     <CardContent className={classes.cardContent}>
                       <Typography gutterBottom variant="h5" component="h2">
@@ -252,8 +251,8 @@ export default function Profile() {
                   <Card className={classes.card}>
                     <CardMedia
                       className={classes.cardMedia}
-                      image="https://source.unsplash.com/random"
-                      title="Image title"
+                      image="./static/materials/profile/catan.jpg"
+                      title="BoardGame"
                     />
                     <CardContent className={classes.cardContent}>
                       <Typography gutterBottom variant="h5" component="h2">
@@ -274,8 +273,8 @@ export default function Profile() {
                   <Card className={classes.card}>
                     <CardMedia
                       className={classes.cardMedia}
-                      image="https://source.unsplash.com/random"
-                      title="Image title"
+                      image="./static/materials/profile/trip.jpg"
+                      title="Travel"
                     />
                     <CardContent className={classes.cardContent}>
                       <Typography gutterBottom variant="h5" component="h2">
@@ -295,8 +294,8 @@ export default function Profile() {
                   <Card className={classes.card}>
                     <CardMedia
                       className={classes.cardMedia}
-                      image="https://source.unsplash.com/random"
-                      title="Image title"
+                      image="./static/materials/profile/ramen.jpg"
+                      title="Ramen"
                     />
                     <CardContent className={classes.cardContent}>
                       <Typography gutterBottom variant="h5" component="h2">

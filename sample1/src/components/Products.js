@@ -72,8 +72,8 @@ function Products() {
                         <Card className={classes.card}>
                             <CardMedia
                             className={classes.cardMedia}
-                            image="https://source.unsplash.com/random"
-                            title="Image title"
+                            image="./static/materials/profile/github.png"
+                            title="GitHub"
                             />
                             <CardContent className={classes.cardContent}>
                             <Typography gutterBottom variant="h5" component="h2">
@@ -97,8 +97,8 @@ function Products() {
                         <Card className={classes.card}>
                             <CardMedia
                             className={classes.cardMedia}
-                            image="https://source.unsplash.com/random"
-                            title="Image title"
+                            image="./static/materials/profile/hacku.png"
+                            title="HackU"
                             />
                             <CardContent className={classes.cardContent}>
                             <Typography gutterBottom variant="h5" component="h2">
@@ -128,13 +128,13 @@ function Products() {
                         <Card className={classes.card}>
                             <CardMedia
                             className={classes.cardMedia}
-                            image="https://source.unsplash.com/random"
-                            title="Image title"
+                            image="./static/materials/profile/portfolio.png"
+                            title="Portfolio"
                             />
                             <CardContent className={classes.cardContent}>
                             <Typography gutterBottom variant="h5" component="h2">
                                 <FontAwesomeIcon icon={faReact}  size="md" className={classes.leftIcon}/>
-                                ポートフォリオサイト
+                                ポートフォリオ
                             </Typography>
                             <Typography>
                                 このポートフォリオサイト．
