@@ -1,4 +1,4 @@
-import React from 'react';
+import React , { useState }from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Button } from '@material-ui/core';
@@ -15,16 +15,36 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+function ButtonPressed(prop){
+  console.trace({prop})
+  if(prop.buttonState){
+    return (
+      <img src={logo} className="App-logo" alt="logo" />
+    );
+  }else{
+    return (
+      <p>
+          This is a sample of using rest API.
+        </p>
+    );
+  }
+}
+
 function App() {
+
+  const [buttonState, setButtonState] = useState(true);
   const classes = useStyles();
+
+  function hoge() {
+    setButtonState(!buttonState)
+    // console.log(buttonState)
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          This is a sample of using rest API.
-        </p>
-        <Button variant="contained">
+        <ButtonPressed buttonState = {buttonState}/>
+        <Button variant="contained" onClick={hoge}>
           Press Here
         </Button>
       </header>
