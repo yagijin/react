@@ -37,7 +37,6 @@ function App() {
 
   function hoge() {
     setButtonState(!buttonState)
-    // console.log(buttonState)
   }
 
   return (
@@ -45,7 +44,7 @@ function App() {
       <header className="App-header">
         <ButtonPressed buttonState = {buttonState}/>
         <Button variant="contained" onClick={hoge}>
-          Press Here
+          登録
         </Button>
       </header>
     </div>
