@@ -5,6 +5,6 @@ body {
 }
 
 .map {
-  /*width: 50vw;*/
+  width: auto;
   height: 70vh;
 }

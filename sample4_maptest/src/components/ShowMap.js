@@ -18,10 +18,11 @@ export default function ShowMap () {
         container: mapContainer.current,
         style: "mapbox://styles/mapbox/streets-v11",
         center: [138.23, 34.58],
-        bounds: [[137.4000, 34.4000],[139.2000, 35.8000]],
-        zoom: 5
+        maxBounds: [[137.4000, 34.4000],[139.2000, 35.8000]],
+        trackResize: true
       });
 
+      //??この処理をやる必要性を感じない
       map.on("load", () => {
         setMap(map);
         map.resize();
