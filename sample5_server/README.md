@@ -3,6 +3,47 @@
 ``` "C:\Program Files\MongoDB\Server\4.2\bin\mongod.exe" --dbpath "\data\db" --auth ```  
 --dbpathを任意のデータベースに変更して使用する
 
+## データベースに対しての要素の追加  
+単体のオブジェクトの追加  
+```js
+db.collection('inventory').insertOne({
+        item: "canvas",
+        qty: 100,
+        tags: ["cotton"],
+        size: { h: 28, w: 35.5, uom: "cm" }
+    })
+    .then(function(result) {
+        // process result
+    })
+```
+複数のオブジェクトの追加  
+```js
+db.collection('inventory').insertMany([
+        { item: "journal",
+          qty: 25,
+          size: { h: 14, w: 21, uom: "cm" },
+          status: "A"},
+        { item: "notebook",
+          qty: 50,
+          size: { h: 8.5, w: 11, uom: "in" },
+          status: "A"},
+        { item: "paper",
+          qty: 100,
+          size: { h: 8.5, w: 11, uom: "in" },
+          status: "D"},
+        { item: "planner",
+          qty: 75, size: { h: 22.85, w: 30, uom: "cm" },
+          status: "D"},
+        { item: "postcard",
+          qty: 45,
+          size: { h: 10, w: 15.25, uom: "cm" },
+          status: "A"}
+      ])
+      .then(function(result) {
+        // process result
+      })
+```
+
 ## 検索方法
 このオブジェクトをデータベースから検索したい場合  
 ```json
@@ -44,4 +85,47 @@ var cursor = db.collection('inventory').find({
   status: "A",
   $or: [ { qty: { $lt: 30 } }, { item: { $regex: "^p" } } ]
 });
+```
+
+## データベースの要素の更新  
+最初にヒットした一つの要素のみを更新  
+```js
+db.collection('inventory').updateOne(
+        { item: "paper" },
+        { $set: { "size.uom": "cm", status: "P" },
+          $currentDate: { lastModified: true } })
+      .then(function(result) {
+        // process result
+      })  
+```
+複数の要素の更新  
+```js
+db.collection('inventory').updateMany(
+        { qty: { $lt: 50 } },
+        { $set: { "size.uom": "in", status: "P" },
+          $currentDate: { lastModified: true } })
+      .then(function(result) {
+        // process result
+      })    
+```
+
+## データベースの要素の削除  
+最初にヒットしたオブジェクトのみを削除  
+```js
+db.collection('inventory').deleteOne({ 
+  status: "D" 
+})
+.then(function(result) {
+  // process result
+})
+```
+ヒットした要素すべてのオブジェクトを削除  
+```js
+db.collection('inventory').deleteMany({ 
+  status: "A" 
+})
+.then(function(result) {
+  // process result
+})
+
 ```

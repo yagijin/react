@@ -8,7 +8,10 @@ const url = 'mongodb://yagijin:' + process.env.MongoDBUserPass + '@localhost:270
 MongoClient.connect(url, function(err, client) {
     console.log("### Now Connecting With MongoDB ###");
 
-    showDataFromDatabase(err,client);
+    //ShowDataFromDatabase(err,client);
+    //DeleteOneObject(err,client);
+
+    ShowDataFromDatabase(err,client);
 
     assert.equal(null, err);
     client.close();
@@ -17,6 +20,51 @@ MongoClient.connect(url, function(err, client) {
 
 
 //########################################################################################################
+
+function DeleteOneObject (err, client) {
+    const db = client.db("test");
+
+    db.collection('inventory').deleteOne({ 
+        status: "D" 
+      })
+      .then(function(result) {
+        // process result
+      })
+}
+function DeleteManyObject (err, client) {
+    const db = client.db("test");
+
+    db.collection('inventory').deleteMany({ 
+        status: "A" 
+      })
+      .then(function(result) {
+        // process result
+      })
+}
+
+function UpdateManyData (err, client) {
+    const db = client.db("test");
+
+    db.collection('inventory').updateMany(
+        { qty: { $lt: 50 } },
+        { $set: { "size.uom": "in", status: "P" },
+          $currentDate: { lastModified: true } })
+      .then(function(result) {
+        // process result
+      })
+}
+
+function UpdateOneData (err,client) {
+    const db = client.db("test");
+
+    db.collection('inventory').updateOne(
+        { item: "paper" },
+        { $set: { "size.uom": "cm", status: "P" },
+          $currentDate: { lastModified: true } })
+      .then(function(result) {
+        // process result
+      })    
+}
 
 function iterateFunc(doc) {
     console.log(JSON.stringify(doc, null, 4));
@@ -27,9 +75,9 @@ function iterateFunc(doc) {
  }
 
 
-function showDataFromDatabase (err,client) {
+function ShowDataFromDatabase (err,client) {
     const db = client.db("test");
-    var cursor = db.collection('inventory').find({$or: [ {status: "A" }, { qty: { $lt: 30 } } ]});
+    var cursor = db.collection('inventory').find({});
 
     cursor.forEach(iterateFunc, errorFunc);
 }
