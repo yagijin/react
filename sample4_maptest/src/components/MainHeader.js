@@ -7,6 +7,10 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 //import NavigationRounded from '@material-ui/icons/NavigationRounded';
 
+function buttonPressed () {
+  alert("button is clicked!!");
+}
+
 const useStyles = makeStyles(theme => ({
     root: {
       flexGrow: 1,
@@ -27,7 +31,7 @@ export default function MainHeader () {
                 <Typography variant="h6" className={classes.title}>
                     Shizupedia
                 </Typography>
-            <Button color="inherit">Login</Button>
+            <Button color="inherit" onClick={buttonPressed}>ボタン</Button>
             </Toolbar>
         </AppBar>
     );
