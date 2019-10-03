@@ -1,7 +1,23 @@
 ## 設定方法  
 以下のコマンドを実行するとデータベースサーバが起動する  
 ``` "C:\Program Files\MongoDB\Server\4.2\bin\mongod.exe" --dbpath "\data\db" --auth ```  
---dbpathを任意のデータベースに変更して使用する
+--dbpathを任意のデータベースに変更して使用する  
+データベースの作成などの操作は以下から行う  
+``` "C:\Program Files\MongoDB\Server\4.2\bin\mongo.exe"  --host <HOSTNAME> --port <PORT>```  
+デフォルトではhostとportいらない  
+``` use admin ```  
+``` 
+  db.createUser(
+  {
+    user: "superuser",
+    pwd: "changeMeToAStrongPassword",
+    roles: [ "root" ]
+  }
+)
+```  
+``` show users ```  
+``` db.shutdownServer() ```
+``` exit ```  
 
 ## データベースに対しての要素の追加  
 単体のオブジェクトの追加  
