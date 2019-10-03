@@ -1,11 +1,18 @@
 import express from 'express';
+import getAllObject from '../../components/databaseGetAll.js';
 
 const router = express.Router();
 
-router.get('/',function(req,res){
-    res.json({
-        message:"### This is test GET"
+function asyncResponse (){
+    return new Promise(resolve => {
+        var data = getAllObject();
+        resolve(data);
     });
+}
+
+router.get('/',async function(req,res){
+    var dataobj = await asyncResponse() 
+    res.json(dataobj);
 });
 
 export default router;
