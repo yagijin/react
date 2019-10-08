@@ -1,5 +1,4 @@
 import React , { useState }from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -15,37 +14,37 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function ButtonPressed(prop){
-  console.trace({prop})
-  if(prop.buttonState){
-    return (
-      <img src={logo} className="App-logo" alt="logo" />
-    );
-  }else{
-    return (
-      <p>
-          This is a sample of using rest API.
-        </p>
-    );
-  }
+
+async function getAllData () {
+    let resp = await fetch('http://localhost:3030/api/v1/getAll',{
+        method:"GET"
+    })
+    let respJSON = await resp.json();
+    return respJSON;
+}
+
+function ShowData (prop) {
+  console.log(prop.content);
+
+  return <p>aaa</p>
 }
 
 function App() {
 
-  const [buttonState, setButtonState] = useState(true);
-  const classes = useStyles();
+  const [content, setContent] = useState({});
+  //const classes = useStyles();
 
   function hoge() {
-    setButtonState(!buttonState)
+    setContent(getAllData());
   }
 
   return (
     <div className="App">
       <header className="App-header">
-        <ButtonPressed buttonState = {buttonState}/>
         <Button variant="contained" onClick={hoge}>
-          登録
+          取得
         </Button>
+        <ShowData content = {content}/>
       </header>
     </div>
   );

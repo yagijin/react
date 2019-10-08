@@ -3,7 +3,7 @@ import getAllObject from '../../components/databaseGetAll.js';
 
 const router = express.Router();
 
-function asyncResponse (){
+function asyncResponse () {
     return new Promise(resolve => {
         var data = getAllObject();
         resolve(data);
@@ -11,7 +11,7 @@ function asyncResponse (){
 }
 
 router.get('/',async function(req,res){
-    var dataobj = await asyncResponse() 
+    var dataobj = await asyncResponse(); //データが来るのを待つ
     res.json(dataobj);
 });
 

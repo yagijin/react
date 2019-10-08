@@ -6,7 +6,7 @@ import router from './route/v1/';
 //var router = require('./route/v1/');
 
 const app = express();
-const port = 3000;
+const port = 3030;
 
 //body-parserの設定
 //まだよくわかっていない

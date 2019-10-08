@@ -4,7 +4,7 @@
   "description": "databaseにアクセスするようのサーバ",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node main.js" ,
+    "start": "babel-node main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -13,6 +13,7 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "body-parser": "^1.19.0",
+    "bson": "^4.0.2",
     "express": "^4.17.1",
     "mongodb": "^3.3.2"
   }
